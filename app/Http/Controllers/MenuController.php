@@ -35,6 +35,11 @@ class MenuController extends Controller
             'title' => 'required',
             'url'   => 'required|url',
             'icon'  => 'nullable|url',
+        ], [
+            'title.required' => 'Judul menu wajib diisi',
+            'url.required'   => 'URL wajib diisi',
+            'url.url'        => 'Format URL tidak valid',
+            'icon.url'       => 'Icon harus berupa URL',
         ]);
 
         Menu::create($request->only([
