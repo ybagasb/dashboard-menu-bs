@@ -3,6 +3,22 @@
 <head>
     <title>Menu Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .url-cell {
+            max-width: 280px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .url-cell a {
+            display: inline-block;
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-4">
@@ -67,8 +83,8 @@
                         @endif
                     </td>
                     <td>{{ $menu->title }}</td>
-                    <td>
-                        <a href="{{ $menu->url }}" target="_blank">
+                    <td class="url-cell">
+                        <a href="{{ $menu->url }}" target="_blank" title="{{ $menu->url }}">
                             {{ $menu->url }}
                         </a>
                     </td>
